@@ -1,26 +1,18 @@
-140byt.es
+ROT13
 =========
 
-A tweet-sized, fork-to-play, community-curated collection of JavaScript.
+A ROT13 encrypter/decrypter implementation in 113 bytes.
 
-How to play
------------
+"ROT13... is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet. ROT13 is an example of the Caesar cipher, developed in ancient Rome.
+... ROT13 is its own inverse; that is, to undo ROT13, the same algorithm is applied, so the same action can be used for encoding and decoding. The algorithm provides virtually no cryptographic security, and is often cited as a canonical example of weak encryption."
 
-1. Click the ![Fork](https://d3nwyuy0nl342s.cloudfront.net/images/gist/buttons/fork_button.png) button above to fork this gist.
-2. Modify all the files to according to the rules below.
-3. Save your entry and tweet it up!
+[Wikipedia](http://en.wikipedia.org/wiki/ROT13)
 
-Keep in mind that thanks to the awesome sensibilities of the GitHub team, gists are just repos. So feel free to clone yours and work locally for a more comfortable environment, and to allow commit messages.
-
-Rules
------
-All entries must exist in an `index.js` file, whose contents are
-
-1. an assignable, valid Javascript expression that
-2. contains no more than 140 bytes, and
-3. does not leak to the global scope.
-
-All entries must also be licensed under the [WTFPL](http://sam.zoy.org/wtfpl/) or equally permissive license.
+Source
+------
+```javascript
+function r(a,b){return++b?String.fromCharCode((a<"["?91:123)>(a=a.charCodeAt()+13)?a:a-26):a.replace(/[A-z]/g,r)}
+```
 
 For more information
 --------------------

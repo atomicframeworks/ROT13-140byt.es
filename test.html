@@ -1,12 +1,14 @@
 <!DOCTYPE html> 
-<title>Foo</title>
-<div>Expected value: <b>undefined</b></div>
-<div>Actual value: <b id="ret"></b></div>
+<title>ROT13</title>
+<div>Expected encrypted value: <b>nopqrstuvxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM</b></div>
+<div>Actual encrypted value: <b id="encrypted"></b></div>
+<div>Expected decrypted value: <b>abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</b></div>
+<div>Decrypted value: <b id="decrypted"></b></div>
+
 <script>
-  // write a small example that shows off the API for your example
-  // and tests it in one fell swoop.
 
-  var myFunction = function(){ /* the code here should be identical to the entry. */ }
+  function r(a,b){return++b?String.fromCharCode((a=a.charCodeAt()+47,a>126?a-94:a)):a.replace(/[^ ]/g,r)};
 
-  document.getElementById( "ret" ).innerHTML = myFunction()
+  document.getElementById( "encrypted" ).innerHTML = r('abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  document.getElementById( "decrypted" ).innerHTML = r('nopqrstuvxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM');
 </script>
