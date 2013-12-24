@@ -1,6 +1,6 @@
 function r(
-	a,	// Input text
-	b	// Will be undefined at first ++undefined results in NaN which is falsy. Subsequently b will be the index of match which will test true so the character will be rotated
+	a,      // Input text
+	b       // Will be undefined at first ++undefined results in NaN which is falsy. Subsequently b will be the index of match which will test true so the character will be rotated
 ){
 	return ++b ?											// When used as a string replacement function it will return the new charater due to the fact that b is being set.
 		String.fromCharCode( 								// Create a string from the rotated value
